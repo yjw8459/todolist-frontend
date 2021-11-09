@@ -7,6 +7,9 @@ import axios from "axios";
  */
 function App() {
 
+  /**
+   * CORS 
+   */
   const baseUrl = "http://localhost:8080"
 
   const [todos, setTodos] = useState([]); //객체라는 것을 알려주기 위해서 빈 배열
