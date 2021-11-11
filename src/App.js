@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
 import axios from "axios";
+import Input from "./components/input";
+import Todo from "./components/todo";
 /**
  * TodoList
  * @returns 
@@ -133,28 +135,13 @@ function App() {
   return (
     <div className="App">
       <h1>TODO LIST</h1>
-      <form onSubmit={insertTodo}>
-        <label>
-          Todo &nbsp;
-          <input type="text" required={true} value={input} onChange={changeText} />
-        </label>
-        <input type="submit" value="Create" />
-      </form>
+      <Input handleSubmit={insertTodo} input={input} handleChange={changeText} />
 
       {
         todos 
         ? todos.map((todo) => {
           return (
-            <div className="todo" key={todo.id}>
-              <h3>
-                <label
-                  className = {todo.completed ? "completed" : null}
-                  onClick={() => updateTodo(todo.id)}>
-                  {todo.todoName}
-                </label>
-                <label onClick={() => deleteTodo(todo.id)}>x</label>
-              </h3>
-            </div>
+              <Todo key={todo.id} todo={todo} handleClick={() => updateTodo(todo.id)} handleDelete={() => deleteTodo(todo.id) } />
           )
         }) 
         : null 
