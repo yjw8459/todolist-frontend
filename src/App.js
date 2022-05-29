@@ -134,7 +134,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>TODO LIST</h1>
+      <h1>TODO LIST📄</h1>
       <Input handleSubmit={insertTodo} input={input} handleChange={changeText} />
 
       {
@@ -146,7 +146,24 @@ function App() {
         }) 
         : null 
       }
-
+<div className="todo">
+  <h3>
+    <label>블로그 작성</label>
+    <label>❌</label>
+  </h3>
+</div>
+<div className="todo">
+  <h3>
+    <label>스프링 시큐리티 스프린트</label>
+    <label>❌</label>
+  </h3>
+</div>
+<div className="todo">
+  <h3 className='completed'>
+    <label>React Test</label>
+    <label></label>
+  </h3>
+</div>
     </div>
   );
 }
