@@ -7,7 +7,7 @@ function Todo(props){
             onClick={props.handleClick}>
             {props.todo.todoName}
           </label>
-          <label onClick={props.handleDelete}>x</label>
+          <label onClick={props.handleDelete}>❌</label>
         </h3>
       </div>
     )
