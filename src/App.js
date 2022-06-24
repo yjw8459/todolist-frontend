@@ -59,7 +59,7 @@ function App() {
    * 함수마다 넣어주는 것이 좋다. 
    */
   function insertTodo(e){
-    e.preventDefault();
+    e.preventDefault(); //onSubmit으로 인한 새로고침 차단 
 
     const insertTodo = async() =>{
       await axios
@@ -146,24 +146,6 @@ function App() {
         }) 
         : null 
       }
-<div className="todo">
-  <h3>
-    <label>블로그 작성</label>
-    <label>❌</label>
-  </h3>
-</div>
-<div className="todo">
-  <h3>
-    <label>스프링 시큐리티 스프린트</label>
-    <label>❌</label>
-  </h3>
-</div>
-<div className="todo">
-  <h3 className='completed'>
-    <label>React Test</label>
-    <label></label>
-  </h3>
-</div>
     </div>
   );
 }
